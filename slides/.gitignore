@@ -1,0 +1,10 @@
+# Emacs backup files
+*~
+
+# LaTeX generated files
+*.aux
+*.nav
+*.out
+*.pdf
+*.snm
+*.toc
