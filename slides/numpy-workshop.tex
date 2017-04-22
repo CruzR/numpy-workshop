@@ -120,4 +120,50 @@
   \includegraphics[width=1.8in]{matplotlib-logo.png}
 \end{frame}
 
+\section{Installation}
+
+\begin{frame}
+  \frametitle{Installation der Distributions-Pakete}
+  Wir ben\"otigen Python in der Version 3.4 oder neuer sowie das Python-Modul \emph{venv}.
+  Die genauen Paketnamen h\"angen von der jeweiligen Linux-Distribution ab.
+  Unter Debian Jessie etwa installiert man die Pakete mit:
+  \begin{semiverbatim}
+    \# apt-get install python3 python3-venv
+  \end{semiverbatim}
+  Um erstellte Dokumente als PDF zu exportieren \\ wird XeLaTeX gebraucht:
+  \begin{semiverbatim}
+    \# apt-get install texlive texlive-xetex
+  \end{semiverbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Aufsetzen einer virtuellen Python-Umgebung}
+  Um sich nicht mit anderen Python-Programmen in die Quere zu kommen,
+  macht es Sinn, alle ben\"otigten Python-Pakete in ein lokales Verzeichnis
+  zu installieren.
+  Dazu setzen wir eine sogenannte \emph{virtualenv}, also eine virtuelle
+  Python-Umgebung auf:
+  \begin{semiverbatim}
+    \$ python3 -m venv \$VENV\_DIRECTORY
+  \end{semiverbatim}
+  Damit Befehle wie \emph{pip} auf diesem Verzeichnis arbeiten, \\
+  m\"ussen wir einige Umgebungsvariablen einlesen:
+  \begin{semiverbatim}
+    \$ source \$VENV\_DIRECTORY/bin/activate
+  \end{semiverbatim}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Installation der Python-Pakete}
+  Wir aktualisieren zun\"achst den Python-Paketmanager pip,
+  da veraltete Versionen unter Umst\"anden die Abh\"angigkeiten
+  der zu installierenden Pakete nicht korrekt aufl\"osen:
+  \begin{semiverbatim}
+    \$ pip3 install --upgrade pip
+  \end{semiverbatim}
+  Dann installieren wir Jupyter, NumPy und matplotlib:
+  \begin{semiverbatim}
+    \$ pip3 install jupyter numpy matplotlib
+  \end{semiverbatim}
+\end{frame}
 \end{document}
