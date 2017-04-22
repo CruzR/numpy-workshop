@@ -5,8 +5,39 @@
   </head>
   <body>
     <h1>Datenanalyse mit Python</h1>
-    <p>Hallo! Sch&ouml;n, dass du dich f&uuml;r meinen Workshop auf dem Augsburger LinuxInfoTag 2017 interessierst.
-    <p>Leider bin ich noch nicht dazu gekommen, genauere Informationen f&uuml;r dich vorzubereiten.
-       Schau doch einfach sp&auml;ter nochmal vorbei.
+    <p>Hallo! Sch&ouml;n, dass du dich f&uuml;r meinen Workshop auf dem Augsburger LinuxInfoTag 2017 interessierst.</p>
+    <h2>Vorbereitung</h2>
+    <p>F&uuml;r die Teilnahme am Workshop ben&ouml;tigst du:</p>
+    <ul>
+      <li>einen Laptop mit GNU/Linux</li>
+      <li>etwas Interesse</li>
+      <li>Kenntnisse im grundlegenden Umgang mit der Kommandozeile (zur Installation der <a href="#requiredapps">ben&ouml;tigten Python-Module</a>)</li> 
+    </ul>
+    <p>Nicht notwendig, aber sicher hilfreich, sind dagegen bestehende Programmierkenntnisse.</p>
+    <h2 id="requiredapps">Installation</h2>
+    <h3>Installation der ben&ouml;tigten Distributions-Pakete</h3>
+    <p>
+      Der erste Teil der Installation wird je nach verwendeter Linux-Distribution ein wenig unterschiedlich aussehen.
+      Danach werden wir eine sogenannte <em>Virtualenv</em>,
+      also eine virtuelle Python-Umgebung, verwenden, um die ben&ouml;tigten Python-Pakete lokal nur in unserem Unterverzeichnis zu installieren,
+      anstatt global &uuml;ber den Paketmanager der Distribution.
+    </p>
+    <p>Zun&auml;chst muss Python in der Version 3.4 oder neuer installiert werden. Unter Debian Jessie funktioniert das z.B. mit:</p>
+    <pre><code># apt-get install python3 python3-venv</code></pre>
+    <p>(Wobei # bedeutet, dass dieser Befehl mit Superuser-Rechten ausgef&uuml;hrt werden muss.)</p>
+    <p>Falls ein PDF-Export des erstellten Dokuments erw&uuml;nscht ist, muss XeTeX installiert sein:</p>
+    <pre><code># apt-get install texlive texlive-xetex</code></pre>
+    <h3 id="requiredmodules">Installation der ben&ouml;tigten Python-Module</h3>
+    <p>Wir legen im Verzeichnis <code>env</code> eine virtuelle Python-Umgebung an:</p>
+    <pre><code>$ python3 -m venv env</code></pre>
+    <p>Und aktivieren diese:</p>
+    <pre><code>$ source env/bin/activate</code></pre>
+    <p>
+      Wir aktualisieren den Python-Paketmanager pip.
+      &Auml;ltere Versionen k&ouml;nnen unter Umst&auml;nden nicht alle Abh&auml;ngigkeiten korrekt aufl&ouml;sen.
+    </p>
+    <pre><code>$ pip3 install --upgrade pip</code></pre>
+    <p>Schlie&szlig;lich installieren wir die Python-Module, die wir benutzen werden:</p>
+    <pre><code>$ pip3 install jupyter numpy matplotlib</code></pre>
   </body>
 </html>
